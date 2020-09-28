@@ -35,7 +35,7 @@ public class Main {
     }
 
     public static double firstCase(float x) {
-        return 1.0 / 3 * Math.asin(1 / (Math.pow(Math.E, Math.abs(x))));
+        return 1.0 / 3 * Math.asin(1.0 / (Math.pow(Math.E, Math.abs(x))));
     }
 
     public static double secondCase(float x) {
