@@ -13,7 +13,7 @@ public class Main {
     }
 
     public static int[] generateRange(int from, int to) {
-        int[] out = new int[to - from + 1];
+        int[] out = new int[Math.abs(to - from) + 1];
         int i = 0, value = from;
         do {
             out[i++] = value;
@@ -43,12 +43,10 @@ public class Main {
             for (int j = 0; j < 15; j++) {
                 if (d[i] == 13) {
                     mat[i][j] = firstCase(x[j]);
+                } else if (contains(specialValuesOfD, d[i])) {
+                    mat[i][j] = secondCase(x[j]);
                 } else {
-                    if (contains(specialValuesOfD, d[i])) {
-                        mat[i][j] = secondCase(x[j]);
-                    } else {
-                        mat[i][j] = thirdCase(x[j]);
-                    }
+                    mat[i][j] = thirdCase(x[j]);
                 }
             }
         }
@@ -71,7 +69,7 @@ public class Main {
         for (int i = 0; i < 15; i++) {
             x[i] = randomInRange(-6, 6);
         }
-        
+
         double[][] d1 = generateMatrix(d, x);
         printMatrix(d1);
     }
