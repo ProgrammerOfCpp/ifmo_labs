@@ -1,5 +1,17 @@
 public class Main {
+    
+    public static void main(String[] args) {
+        int[] d = generateRange(17, 6);
 
+        float[] x = new float[15];
+        for (int i = 0; i < 15; i++) {
+            x[i] = randomInRange(-6, 6);
+        }
+
+        double[][] d1 = generateMatrix(d, x);
+        printMatrix(d1);
+    }
+    
     public static float randomInRange(float min, float max) {
         return (float)(Math.random() * (max - min) + min);
     }
@@ -60,17 +72,5 @@ public class Main {
             }
             System.out.println();
         }
-    }
-
-    public static void main(String[] args) {
-        int[] d = generateRange(17, 6);
-
-        float[] x = new float[15];
-        for (int i = 0; i < 15; i++) {
-            x[i] = randomInRange(-6, 6);
-        }
-
-        double[][] d1 = generateMatrix(d, x);
-        printMatrix(d1);
     }
 }
